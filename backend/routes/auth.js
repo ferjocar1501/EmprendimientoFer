@@ -9,6 +9,14 @@ router.post('/register', async (req, res) => {
   try { 
     const { username, password, fullname } = req.body;
     console.log(username, password, fullname)
+    // Consultar si el correo ya existe en la base de datos
+    const [existingUser] = await pool.query('SELECT * FROM base WHERE correo = ?', [username]);
+
+    // Si existe un usuario con el mismo correo, devolver una respuesta de error
+    if (existingUser.length > 0) {
+      return res.status(400).json({ msg: 'El correo ya está registrado. Intente con otro correo.' });
+    }    
+    /***************************************************************************/ 
     const nuevoUsuario = {
       correo: username,
       contraseña: password,
