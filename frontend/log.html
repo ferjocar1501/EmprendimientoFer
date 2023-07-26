@@ -138,6 +138,13 @@
               'Excelente!',
               'success'
               )
+            cerrarModalInicioSesion()
+          } else {
+            Swal.fire({
+              title: 'El usuario ya existe!',
+              text: 'Inténte con otro',
+              icon: 'error'
+            })
           }
           console.log(data); // Respuesta del servidor después del registro
           cerrarModalRegistro(); // Cerrar el modal de registro después de enviar el formulario
@@ -176,7 +183,7 @@
           } else {
             Swal.fire({
               title: 'Credenciales incorrectas!',
-              text: 'Inténte otra vezzzzz',
+              text: 'Inténte otra vez',
               icon: 'error'
             })
           }
