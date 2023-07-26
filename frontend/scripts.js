@@ -17,8 +17,9 @@ let selectedImages = [];
 function showOrientacionVocacionalAsistida() {
     closeSidebar();
     document.getElementById("content").innerHTML = `
-        <h1>Orientación Vocacional Asistida</h1>
-        <p>Contenido de la página de Orientación Vocacional Asistida</p>
+        <h1 style="font-family: 'Roboto Slab', sans-serif;">Orientación Vocacional Asistida</h1>
+        <p style="font-family: 'Nunito', sans-serif;">Aquí podrás encontrar una serie de cursos de 
+        carreras que tal vez llamen tu atención ¡Selecciona el que te guste y añadelo a tu colección!</p>
         <div id="imagePreview">
             <div class="curso-box" onclick="addToCollection('ingelec.avif', 'Ingeniería Eléctrica')">
                 <img class="image-small" src="ingelec.avif" alt="Ingeniería Eléctrica">
@@ -44,21 +45,29 @@ function showOrientacionVocacionalAsistida() {
                 <img class="image-small" src="ingsis.avif" alt="Ingeniería de Sistemas">
                 <p>Ingeniería de Sistemas</p>
             </div>
-            <div class="curso-box" onclick="addToCollection('imagen7.png', 'Título de la imagen 7')">
-                <img class="image-small" src="ruta/imagen7.png" alt="Título de la imagen 7">
-                <p>Título de la imagen 7</p>
+            <div class="curso-box" onclick="addToCollection('ingest.png', 'Ingeniería Estadística')">
+                <img class="image-small" src="ingest.png" alt="Ingeniería Estadística">
+                <p>Ingeniería Estadística</p>
             </div>
-            <div class="curso-box" onclick="addToCollection('imagen8.png', 'Título de la imagen 8')">
-                <img class="image-small" src="ruta/imagen8.png" alt="Título de la imagen 8">
-                <p>Título de la imagen 8</p>
+            <div class="curso-box" onclick="addToCollection('ingpet.png', 'Ingeniería de Petróleos')">
+                <img class="image-small" src="ingpet.png" alt="Ingeniería de Petróleos">
+                <p>Ingeniería de Petróleos</p>
             </div>
-            <div class="curso-box" onclick="addToCollection('imagen9.png', 'Título de la imagen 9')">
-                <img class="image-small" src="ruta/imagen9.png" alt="Título de la imagen 9">
-                <p>Título de la imagen 9</p>
+            <div class="curso-box" onclick="addToCollection('ingmat.png', 'Ingeniería en Materiales')">
+                <img class="image-small" src="ingmat.png" alt="Ingeniería en Materiales">
+                <p>Ingeniería en Materiales</p>
             </div>
-            <div class="curso-box" onclick="addToCollection('imagen10.png', 'Título de la imagen 10')">
-                <img class="image-small" src="ruta/imagen10.png" alt="Título de la imagen 10">
-                <p>Título de la imagen 10</p>
+            <div class="curso-box" onclick="addToCollection('ingnav.jpg', 'Ingeniería Naval')">
+                <img class="image-small" src="ingnav.jpg" alt="Ingeniería Naval">
+                <p>Ingeniería Naval</p>
+            </div>
+            <div class="curso-box" onclick="addToCollection('ingali.avif', 'Ingeniería en Alimentos')">
+                <img class="image-small" src="ingali.avif" alt="Ingeniería en Alimentos">
+                <p>Ingeniería en Alimentos</p>
+            </div>
+            <div class="curso-box" onclick="addToCollection('ingmeca.jpg', 'Ingeniería Mecatrónica')">
+                <img class="image-small" src="ingmeca.jpg" alt="Ingeniería Mecatrónica">
+                <p>Ingeniería Mecatrónica</p>
             </div>
         </div>
     `;
@@ -109,7 +118,7 @@ function showResena() {
     content += `
         <div class="review-form">
             <h2>Deja tu comentario y puntuación:</h2>
-            <textarea id="reviewComment" rows="4" placeholder="Escribe tu reseña aquí"></textarea>
+            <textarea id="reviewComment" rows="4" placeholder="Escribe tu reseña aquí..."></textarea>
             <div id="estrellas">
             <p>Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
@@ -282,5 +291,18 @@ function closeCourseAddedModal() {
     courseAddedModal.style.display = "none";
 }
 
-
-
+function showWelcomeMessage() {
+    const welcomeMessageContainer = document.getElementById("welcomeMessageContainer");
+    const username = sessionStorage.getItem('username');
+    if (username) {
+        const welcomeMessage = document.createElement("p");
+        welcomeMessage.innerHTML = `¡Bienvenido!<br>${username}`; // Cambio para agregar el salto de línea
+        welcomeMessage.classList.add("welcome-message");
+        welcomeMessageContainer.appendChild(welcomeMessage);
+    }
+}
+  
+// Mostrar el mensaje de bienvenida cuando el contenido se cargue
+document.addEventListener('DOMContentLoaded', () => {
+    showWelcomeMessage();
+});

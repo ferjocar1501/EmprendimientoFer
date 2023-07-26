@@ -27,13 +27,17 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     border: none;
-    background-color: #74adce;
+    background-color: transparent; /* Fondo transparente */
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
     position: relative;
-}
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
 
 .sidebar button:first-child {
     margin-top: 130px; /* Ajusta el valor del margen superior según lo necesites */
@@ -97,14 +101,15 @@ body {
 
 #imagePreview div {
     text-align: center;
-    border: 2px solid #6c63ff;
+    border: 2px solid transparent; /* Ocultamos el borde sólido */
     padding: 10px;
     margin: 10px;
     text-align: center;
     width: 200px; /* Ajusta el ancho según tus necesidades */
     height: 250px; /* Ajusta el alto según tus necesidades */
     display: inline-block;
-}
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efecto de difuminado con sombra */
+  }
 
 #imagePreview img {
     max-width: 100%;
@@ -145,7 +150,6 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
     margin: 50px 0;
     transition: color 0.3s; /* Agregamos una transición para el cambio de color */
 }   
@@ -173,6 +177,7 @@ body {
     height: 250px; /* Ajusta el alto según tus necesidades */
     display: inline-block;
     /* Para centrar la imagen y el texto verticalmente */
+    transition: transform 0.3s; /* Agrega una transición suave para que el cambio de tamaño sea animado */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,8 +197,7 @@ body {
   
   
   .curso-box:hover {
-    width: 300px !important;
-    height: 300px !important;
+    transform: scale(1.2); /* Aumenta el tamaño del elemento en un 20% */
   }
 
 
@@ -247,7 +251,7 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-image: linear-gradient(45deg,#79dcf0,#144752);    
     width: 300px;
 }
 
@@ -256,14 +260,15 @@ body {
     min-width: 90%;
     max-width: 90%;
     resize: none;
+    background-color: #ffffff;
+    font-family: "Borel", sans-serif;
 }
-
 
 /* Estilo para el texto dentro del formulario de reseñas */
 .review-form h2,
 .review-form textarea,
 .review-form span {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto Slab", sans-serif;
 }
 
 /* Estilo para el botón dentro del formulario de reseñas */
@@ -420,5 +425,59 @@ body {
 	}
 }
 
+#welcomeMessageContainer {
+    font-family: 'Borel', sans-serif;
+    font-size: 28px;
+}
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Estilo para el fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento cuando se mueve */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento cuando se hace clic */
+::-webkit-scrollbar-thumb:active {
+    background: #446581;
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento en dispositivos táctiles */
+::-webkit-scrollbar-thumb:horizontal {
+    background: #888;
+}
+
+/* Estilo para el fondo de la barra de desplazamiento en dispositivos táctiles */
+::-webkit-scrollbar-track:horizontal {
+    background: #f1f1f1;
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento en dispositivos táctiles cuando se mueve */
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #555;
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento en dispositivos táctiles cuando se hace clic */
+::-webkit-scrollbar-thumb:horizontal:active {
+    background: #093b69;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background-color: transparent;
+}
 

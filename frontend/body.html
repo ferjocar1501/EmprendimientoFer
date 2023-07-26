@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Borel&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="title-bar">
@@ -16,15 +19,26 @@
     </div>
     <div class="container">
         <div class="sidebar" id="sidebar">
-            <!-- Icono del sidebar dentro del sidebar -->
-            <button class="close-sidebar" id="closeSidebar" onclick="toggleSidebar()">
-                <i class="fas fa-bars close-icon" style="color: white;"></i>
-            </button>
-            <button onclick="showInicio()">Inicio</button>
-            <button onclick="showOrientacionVocacionalAsistida()">Orientación Vocacional Asistida</button>
-            <button onclick="showColeccion()">Colección</button>
-            <button onclick="showResena()">Reseña</button>
-            <!-- Nueva opción Log Out con el ícono -->
+    <!-- Icono del sidebar dentro del sidebar -->
+
+    <button class="close-sidebar" id="closeSidebar" onclick="toggleSidebar()">
+        <i class="fas fa-bars close-icon" style="color: white;"></i>
+    </button>
+    <div id="welcomeMessageContainer">
+    </div>
+    <button onclick="showInicio()">
+        <i class="fas fa-home" style="margin-right: 8px;"></i> Inicio
+    </button>
+    <button onclick="showOrientacionVocacionalAsistida()">
+        <i class="fas fa-user-graduate" style="margin-right: 8px;"></i> Orientación Vocacional
+    </button>
+    <button onclick="showColeccion()">
+        <i class="fas fa-book" style="margin-right: 8px;"></i> Colección
+    </button>
+    <button onclick="showResena()">
+        <i class="fas fa-pen" style="margin-right: 8px;"></i> Reseña
+    </button>
+            <!-- Nueva opción Log Out con el ícono -->        
             <button class="logout-button" id="logoutButton" onclick="showLogoutModal()">
                 <i class="fas fa-sign-out-alt" style="color: white;"></i>
             </button>

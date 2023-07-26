@@ -152,46 +152,47 @@
           console.error('Error al enviar la solicitud:', error);
         }
       });
+// Manejador para el formulario de Inicio de Sesión
+loginForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const formData = new FormData(loginForm);
+  const username = formData.get('username');
+  const password = formData.get('password');
 
-      // Manejador para el formulario de Inicio de Sesión
-      loginForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const formData = new FormData(loginForm);
-        const username = formData.get('username');
-        const password = formData.get('password');
+  try {
+    const response = await fetch('http://127.0.0.1:3000/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify({ username, password })
+    });
 
-        try {
-          const response = await fetch('http://127.0.0.1:3000/api/auth/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*'
-            },
-            body: JSON.stringify({ username, password })
-          });
-
-          const data = await response.json();
-          console.log(data.data.length)
-          if (data.data.length>0){
-            Swal.fire(
-              'Acceso Exitoso!',
-              'Un gusto en verte!',
-              'success'
-              )
-            cerrarModalInicioSesion()
-            window.location.href = "index.html";
-          } else {
-            Swal.fire({
-              title: 'Credenciales incorrectas!',
-              text: 'Inténte otra vez',
-              icon: 'error'
-            })
-          }
-          console.log(data); // Respuesta del servidor después del inicio de sesión
-        } catch (error) {
-          console.error('Error al enviar la solicitud:', error);
-        }
-      });
+    const data = await response.json();
+    console.log(data.data.length)
+    if (data.data.length > 0) {
+      // Almacenar el nombre de usuario en la sesión
+      sessionStorage.setItem('username', username);
+      Swal.fire(
+        'Acceso Exitoso!',
+        'Un gusto en verte!',
+        'success'
+      )
+      cerrarModalInicioSesion()
+      window.location.href = "index.html";
+    } else {
+      Swal.fire({
+        title: 'Credenciales incorrectas!',
+        text: 'Inténte otra vez',
+        icon: 'error'
+      })
+    }
+    console.log(data); // Respuesta del servidor después del inicio de sesión
+  } catch (error) {
+    console.error('Error al enviar la solicitud:', error);
+  }
+});
     });
   </script>
 </body>
