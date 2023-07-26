@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitespool</title>
+    <link rel="icon" href="espol.png" type="image/png">
+    <link rel="stylesheet" href="stylesbody.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
+</head>
+<body>
+    <div class="title-bar">
+        <img src="sinfondobl.png" alt="Logo de Orientación Vocacional" style="max-width: 900px; max-height: 200px;">
+    </div>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <!-- Icono del sidebar dentro del sidebar -->
+            <button class="close-sidebar" id="closeSidebar" onclick="toggleSidebar()">
+                <i class="fas fa-bars close-icon" style="color: white;"></i>
+            </button>
+            <button onclick="showInicio()">Inicio</button>
+            <button onclick="showOrientacionVocacionalAsistida()">Orientación Vocacional Asistida</button>
+            <button onclick="showColeccion()">Colección</button>
+            <button onclick="showResena()">Reseña</button>
+            <!-- Nueva opción Log Out con el ícono -->
+            <button class="logout-button" id="logoutButton" onclick="showLogoutModal()">
+                <i class="fas fa-sign-out-alt" style="color: white;"></i>
+            </button>
+        </div>
+        <div class="content" id="content">
+            <!-- Contenido cambiante según los botones -->
+        </div>
+    </div>
+    <!-- Modal para confirmar eliminación -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <h3>¿Está seguro de eliminar este curso?</h3>
+            <button onclick="removeConfirmed()">Eliminar</button>
+            <button onclick="closeConfirmModal()">Cancelar</button>
+        </div>
+    </div>
+    <!-- Modal para Log Out -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <h3>Cierre de Sesión Exitoso</h3>
+            <button onclick="closeLogoutModal()">Cerrar</button>
+        </div>
+    </div>
+    <!-- Modal para mostrar mensaje de curso agregado exitosamente -->
+    <div class="modal" id="courseAddedModal">
+        <div class="modal-content">
+            <h3>¡Curso Agregado Exitosamente!</h3>
+            <p id="courseAddedMessage">Curso agregado a la colección.</p>
+            <button onclick="closeCourseAddedModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+

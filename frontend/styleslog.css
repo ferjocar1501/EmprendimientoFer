@@ -1,0 +1,198 @@
+/* Estilos generales */
+body {
+    font-family: "Borel", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #74adce;
+  }
+  
+  /* Estilos para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-contenido {
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+    text-align: center;
+  }
+  
+  .cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .cerrar:hover,
+  .cerrar:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos específicos para los formularios */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #0080ff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0066cc;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la altura para centrar verticalmente */
+  }
+  
+  /* Estilos para el logo */
+  img {
+    max-width: 700px; /* Ajusta el tamaño máximo de la imagen */
+  }
+  
+  /* Estilos para el botón "APRENDE DESDE LA COMODIDAD" */
+  .aprende-btn-container {
+    margin-top: 20px;
+    text-align: center; /* Alineación al centro horizontal */
+    justify-content: center;
+  }
+  
+  .aprende-btn {
+    font-family: Arial, sans-serif; /* Cambiar la fuente a "Borel" */
+    background-color: #203ddd;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .aprende-btn:hover {
+    background-color: #163649; /* Color morado más oscuro al pasar el ratón */
+    transform: scale(1.15); /* Aumenta el tamaño al 105% */
+
+  }
+  
+  /* Estilos específicos para los formularios */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .campo {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Establece el ancho al 100% */
+  }
+  
+  .boton {
+    background-color: #0080ff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    width: 100%; /* Establece el ancho al 100% */
+  }
+  
+  .boton:hover {
+    background-color: #0066cc;
+  }
+
+  /* Estilo para el botón de "Registrarse" */
+  .btn-registrarse {
+    background-color: blue;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 45%;
+    margin: 0 auto; /* Alinear el botón al centro horizontalmente */
+    margin-top: 4%;
+  }
+
+  /* Estilo para el enlace de "Iniciar Sesión" */
+  .btn-iniciar-sesion {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 45%;
+  }
+
+  .btn-iniciar-sesion-azul {
+    background-color: blue;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 4%;
+  }
+
+  .btn-registrate {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 45%;
+  }
+  
+  
+
+  

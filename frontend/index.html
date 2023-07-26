@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientación Vocacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header style="display: flex; flex-direction: column; align-items: center;">
+        <img src="sinfondobl.png" alt="Logo de Orientación Vocacional" style="max-width: 900px; max-height: 200px;">
+        <a href="#" onclick="mostrarModalCarrito()" style="margin-top: 5px;">
+            <i class="fas fa-shopping-cart" style="font-size: 24px; color: #fff;"></i>
+        </a>
+    </header>
+    <main>
+        <h2 style="color: #ffffff;text-align: center;">Planes de Suscripción</h2>
+        <div class="planes">
+            <div class="plan">
+                <h3>Suscripción Mensual</h3>
+                <p>Acceso ilimitado por 30 días</p>
+                <p>Precio: $10/mes</p>
+                <button onclick="agregarAlCarrito('Mensual', 10)">Agregar al Carrito</button>
+            </div>
+            <div class="plan">
+                <h3>Suscripción Anual</h3>
+                <p>Acceso ilimitado por 365 días</p>
+                <p>Precio: $100/año</p>
+                <button onclick="agregarAlCarrito('Anual', 100)">Agregar al Carrito</button>
+            </div>
+            <div class="plan">
+                <h3>Prueba Gratuita</h3>
+                <p>Acceso gratuito por 7 días</p>
+                <p>Precio: Gratis</p>
+                <button onclick="agregarAlCarrito('Prueba Gratuita', 0)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal del Carrito -->
+    <div id="modalCarrito" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModalCarrito()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="listaCarrito">
+                <!-- Aquí se mostrarán los elementos del carrito dinámicamente -->
+            </ul>
+            <p id="totalCarrito">Total: $0</p>
+            <button onclick="mostrarModalPago()" style="background-color: #0080ff; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 20px;">Realizar Pago</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div id="modalPago" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModalPago()">&times;</span>
+            <h2>Selecciona un método de pago:</h2>
+            <label>
+                <input type="radio" name="metodoPago" value="Tarjeta" checked> Pago con Tarjeta de Crédito o Débito
+            </label>
+            <label>
+                <input type="radio" name="metodoPago" value="Monedero"> Pago con Monedero Electrónico
+            </label>
+            <label>
+                <input type="radio" name="metodoPago" value="PayPal"> Pago con PayPal
+            </label>
+            <button onclick="realizarPago()" style="background-color: #0066cc; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold;">Pagar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pago Completado -->
+    <div id="modalPagoCompletado" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModalPagoCompletado()">&times;</span>
+            <h2>Pago Completado</h2>
+            <p>¡Gracias por tu compra!</p>
+            <img src="descarga.png" alt="Imagen de Pago Completado">
+        </div>
+    </div>
+    
+    <div id="cargando-contenedor" style="display: none;">
+        <div id="cargando">
+            <img src="cargando.webp" alt="Cargando">
+            <p>Cargando...</p>
+        </div>
+    </div>    
+
+    <footer>
+        <p>&copy; 2023 Grupo 2 Deserción Estudiantil</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,198 @@
+/* Estilos generales */
+body {
+    font-family: "Roboto Slab", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #74adce; /* Fondo rosado */
+}
+
+header {
+    background-image: linear-gradient(45deg, #2494c0, #093b69);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+main {
+    padding: 1rem;
+}
+
+footer {
+    background-image: linear-gradient(45deg, #2494c0, #093b69);
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos específicos para el ecommerce */
+.planes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.plan {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan h3 {
+    color: #333;
+}
+
+.plan p {
+    color: #666;
+}
+
+.plan button {
+    background-color: #0080ff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.plan button:hover {
+    background-color: #0066cc;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease; /* Transición de desvanecimiento */
+}
+
+.modal.mostrar {
+    display: block;
+    opacity: 1; /* Opacidad 1 para mostrar */
+}
+
+.modal-contenido {
+    background-color: #f9f9f9;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#listaCarrito {
+    list-style-type: none;
+    padding: 0;
+}
+
+#listaCarrito li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#totalCarrito {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Estilos para el modal de Pago */
+#modalPago label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el modal de Pago Completado */
+#modalPagoCompletado {
+    display: none;
+    z-index: 2; /* Asegurarse de que esté por encima de las otras modales */
+}
+
+#modalPagoCompletado .modal-contenido {
+    text-align: center;
+    width: 30%; /* Ajusta el ancho aquí (por ejemplo, 30% para hacerlo más angosto) */
+    margin: 0 auto; /* Centra horizontalmente el contenido */
+}
+
+#modalPagoCompletado h2 {
+    margin-top: 0;
+}
+
+#modalPagoCompletado img {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para el contenedor del mensaje de "Cargando" */
+#cargando-contenedor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegurarse de que esté por encima de otros elementos */
+  }
+  
+  /* Estilos para el mensaje de "Cargando" */
+  #cargando {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+  }
+  
+  #cargando img {
+    width: 100px; /* Ajusta el tamaño de la imagen de "Cargando" */
+  }
+  
+  #cargando p {
+    margin-top: 10px;
+  }
+  
+  .plan:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% */
+    transition: transform 0.2s ease; /* Agrega una transición suave */
+  }
+
+  .fas.fa-shopping-cart {
+    transition: transform 0.2s ease;
+}
+
+/* Aumentar el tamaño del ícono al pasar el cursor sobre él */
+.fas.fa-shopping-cart:hover {
+    transform: scale(1.2);
+}
