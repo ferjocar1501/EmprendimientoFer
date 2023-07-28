@@ -317,22 +317,6 @@ function showColeccion() {
     document.getElementById("content").innerHTML = collectionContent;
 }
 
-function showTestVocacional() {
-    closeSidebar();
-    document.getElementById("content").innerHTML = `
-    <h1 style='font-family: Roboto Slab, sans-serif;'>Test Vocacional</h1>
-    <p>Completa el siguiente formulario con tus respuestas:</p>
-        <form>
-        <label for="respuesta1">Pregunta 1:</label>
-            <textarea id="respuesta1" name="respuesta1" rows="4" cols="50" required></textarea>
-            <br>
-            <label for="respuesta2">Pregunta 2:</label>
-            <textarea id="respuesta2" name="respuesta2" rows="4" cols="50" required></textarea>
-            <!-- Agrega más preguntas según sea necesario -->
-            <br>
-            <input type="submit" value="Enviar respuestas">
-    `;
-}
 
 function showResena() {
     closeSidebar();
@@ -378,6 +362,17 @@ function showResena() {
 
     // Actualizar el contenido del div con el ID "content"
     document.getElementById("content").innerHTML = content;
+}
+
+function showMonedero(){
+    closeSidebar()
+    document.getElementById("content").innerHTML =`    
+    <h1 style="font-family: 'Roboto Slab', sans-serif">
+    Monedero 
+  </h1>
+  <p style="font-family: 'Nunito', sans-serif">
+    Aquí podrás consultar tu saldo por visualizaciones</p>
+    `;
 }
 
 function showCurso(curso) {
@@ -523,23 +518,17 @@ function closeCourseAddedModal() {
 }
 
 function showWelcomeMessage() {
-    const welcomeMessageContainer = document.getElementById("welcomeMessageContainer");
+    const welcomeMessageContainer = document.getElementById(
+        "welcomeMessageContainer"
+    );
     const username = sessionStorage.getItem("username");
-
     if (username) {
         const welcomeMessage = document.createElement("p");
-        welcomeMessage.innerHTML = `¡Bienvenido,<br>${username}!`;
+        welcomeMessage.innerHTML = `¡Bienvenido,<br>${username}!`; // Cambio para agregar el salto de línea
         welcomeMessage.classList.add("welcome-message");
-
-        // Insertar el mensaje al principio del contenedor
-        if (welcomeMessageContainer.firstChild) {
-            welcomeMessageContainer.insertBefore(welcomeMessage, welcomeMessageContainer.firstChild);
-        } else {
-            welcomeMessageContainer.appendChild(welcomeMessage);
-        }
+        welcomeMessageContainer.appendChild(welcomeMessage);
     }
 }
-
 
 // Mostrar el mensaje de bienvenida cuando el contenido se cargue
 document.addEventListener("DOMContentLoaded", () => {
@@ -573,31 +562,3 @@ function closeModal() {
 
     modal.style.display = "none";
 }
-
-function cargarIconos(){
-    let estadoDePago = localStorage.getItem("pagado")
-    console.log(estadoDePago);     
-    if (estadoDePago){
-        let freeIcon = document.getElementById("freeIcon");
-        let premiumIcon = document.getElementById("premiumIcon")
-        console.log(freeIcon, premiumIcon)
-        freeIcon.classList.add("hideIcon")
-        premiumIcon.classList.remove("hideIcon")
-    } else {
-        let freeIcon = document.getElementById("freeIcon");
-        let premiumIcon = document.getElementById("premiumIcon")
-        console.log(freeIcon, premiumIcon)
-        freeIcon.classList.remove("hideIcon")
-        premiumIcon.classList.add("hideIcon")
-    }
-}
-
-function comprarSuscripcion(){
-    window.location.href= "index.html"
-}
-let freeIcon = document.getElementById("freeIcon");
-
-freeIcon.addEventListener("click", comprarSuscripcion)
-
-document.addEventListener("DOMContentLoaded",cargarIconos)
-

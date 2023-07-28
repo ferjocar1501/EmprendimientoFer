@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styleslog.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Borel&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <header>
@@ -34,6 +35,13 @@
         <div class="campo-container">
           <input type="password" id="passwordRegister" name="password" required placeholder="Contraseña">
         </div>
+        <div class="campo-container">
+          <label for="type">Selecciona tu rol:</label>
+          <select name="type" id="roleRegister" class="custom-select">
+            <option value="student">Estudiante</option>
+            <option value="tutor">Tutor</option>
+          </select>
+        </div>
         <button class="btn-registrarse" type="submit">Registrarse</button>
       </form>
       <p>¿Ya tienes una cuenta? <a href="#" id="btnAbrirModalInicioSesion" class="btn-iniciar-sesion">Iniciar sesión</a></p>
@@ -53,6 +61,13 @@
         <div class="campo-container">
           <input type="password" id="passwordLogin" name="password" required placeholder="Contraseña">
         </div>
+        <div class="campo-container">
+          <label for="typo">Selecciona tu rol:</label>
+          <select name="type" id="roleLogin" class="custom-select">
+            <option value="student">Estudiante</option>
+            <option value="tutor">Tutor</option>
+          </select>
+        </div>
         <button class="btn-iniciar-sesion-azul" id="btnIniciarSesionModal" type="submit">Iniciar Sesión</button>
         <p>¿Eres nuevo? <a href="#" id="btnAbrirModalRegistro" class="btn-registrate">Regístrate</a></p>
       </form>
@@ -60,7 +75,6 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    
     // Funciones para mostrar y cerrar los modales
     function mostrarModalRegistro() {
       const modalRegistro = document.getElementById('modalRegistro');
@@ -83,6 +97,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem("pagado",false)
       const btnIniciarSesionModal = document.getElementById('btnIniciarSesionModal');
       const btnRegistro = document.getElementById('btnRegistro');
       const btnAbrirModalInicioSesion = document.getElementById('btnAbrirModalInicioSesion');
@@ -120,6 +135,7 @@
         const username = formData.get('username');
         const password = formData.get('password');
         const fullname = formData.get('fullname');
+        const type = formData.get('type')
 
         try {
           const response = await fetch('http://127.0.0.1:3000/api/auth/register', {
@@ -128,23 +144,23 @@
               'Content-Type': 'application/json',
               'Access-Control-Allow-Origin': '*'
             },
-            body: JSON.stringify({ username, password, fullname })
+            body: JSON.stringify({ username, password, fullname, type })
           });
 
           const data = await response.json();
-          if (data.status==200){
+          if (data.status == 200) {
             Swal.fire(
               'Registro Exitoso!',
               'Excelente!',
               'success'
-              )
-            cerrarModalInicioSesion()
+            );
+            cerrarModalInicioSesion();
           } else {
             Swal.fire({
               title: 'El usuario ya existe!',
-              text: 'Inténte con otro',
+              text: 'Inténtalo con otro',
               icon: 'error'
-            })
+            });
           }
           console.log(data); // Respuesta del servidor después del registro
           cerrarModalRegistro(); // Cerrar el modal de registro después de enviar el formulario
@@ -152,51 +168,58 @@
           console.error('Error al enviar la solicitud:', error);
         }
       });
-// Manejador para el formulario de Inicio de Sesión
-loginForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const formData = new FormData(loginForm);
-  const username = formData.get('username');
-  const password = formData.get('password');
 
-  try {
-    const response = await fetch('http://127.0.0.1:3000/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify({ username, password })
-    });
+      // Manejador para el formulario de Inicio de Sesión
+      loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(loginForm);
+        const username = formData.get('username');
+        const password = formData.get('password');
+        const type = formData.get('type');
 
-    const data = await response.json();
-    console.log(data.data.length)
-    if (data.data.length > 0) {
-      // Almacenar el nombre de usuario en la sesión
-      sessionStorage.setItem('username', username);
-      Swal.fire(
-        'Acceso Exitoso!',
-        'Un gusto en verte!',
-        'success'
-      )
-      cerrarModalInicioSesion()
-      window.location.href = "index.html";
-    } else {
-      Swal.fire({
-        title: 'Credenciales incorrectas!',
-        text: 'Inténte otra vez',
-        icon: 'error'
-      })
-    }
-    console.log(data); // Respuesta del servidor después del inicio de sesión
-  } catch (error) {
-    console.error('Error al enviar la solicitud:', error);
-  }
-});
+        try {
+          const response = await fetch('http://127.0.0.1:3000/api/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({ username, password, type })
+          });
+
+          const data = await response.json();
+          console.log(data.data.length)
+          if (data.data.length > 0) {
+            // Almacenar el nombre de usuario en la sesión
+            sessionStorage.setItem('username', username);
+            Swal.fire(
+              'Acceso Exitoso!',
+              'Un gusto verte!',
+              'success'
+            );
+            cerrarModalInicioSesion();
+            if (type === 'student') {
+              window.location.href = "body.html"; // Redirigir a la página de estudiantes si es estudiante
+            } else if (type === 'tutor') {
+              window.location.href = "bodytutor.html"; // Redirigir a la página de tutores si es tutor
+            }
+          } else {
+            Swal.fire({
+              title: 'Credenciales incorrectas!',
+              text: 'Inténtalo otra vez',
+              icon: 'error'
+            });
+          }
+          console.log(data); // Respuesta del servidor después del inicio de sesión
+        } catch (error) {
+          console.error('Error al enviar la solicitud:', error);
+        }
+      });
     });
   </script>
 </body>
 </html>
+
 
 
 

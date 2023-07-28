@@ -193,6 +193,38 @@ body {
     width: 45%;
   }
   
-  
+.campo-container select {
+  /* Eliminamos el borde y el fondo */
+  border: none;
+  background-color: none;
+  outline: none; /* Quita el contorno cuando se enfoca */
+  appearance: none; /* Quita las flechas predeterminadas en algunos navegadores */
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.custom-select {
+  /* Establecemos el tamaño original del select */
+  font-family: 'Roboto Slab', sans-serif; /* Cambiar el tipo de letra */
+  text-align: center;
+  color: #333; /* Color del texto */
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc; /* Línea de separación entre el select y las opciones */
+  padding: 8px 24px 8px 10px;
+  outline: none; /* Quita el contorno cuando se enfoca */
+  cursor: pointer;
+  appearance: none; /* Quita las flechas predeterminadas en algunos navegadores */
+  transition: all 0.3s ease-in-out;
+}
+
+  /* Estilos para las opciones de selección */
+  .campo-container label {
+    margin-top: 30px;
+    margin-bottom: 2px;
+  }
 
   

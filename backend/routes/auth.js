@@ -6,77 +6,53 @@ const router = express.Router();
 
 // Ruta para el registro de usuario
 router.post('/register', async (req, res) => {
-  try { 
-    const { username, password, fullname } = req.body;
-    console.log(username, password, fullname)
+  try {
+    const { username, password, fullname, type } = req.body;
+    console.log(username, password, fullname, type)
     // Consultar si el correo ya existe en la base de datos
     const [existingUser] = await pool.query('SELECT * FROM base WHERE correo = ?', [username]);
 
     // Si existe un usuario con el mismo correo, devolver una respuesta de error
     if (existingUser.length > 0) {
       return res.status(400).json({ msg: 'El correo ya está registrado. Intente con otro correo.' });
-    }    
-    /***************************************************************************/ 
+    }
+    /***************************************************************************/
     const nuevoUsuario = {
       correo: username,
       contraseña: password,
-      nombre: fullname
+      nombre: fullname,
+      tipo: type
     };
     const sql = 'INSERT INTO base SET ?';
 
-pool.query(sql, nuevoUsuario, (err, result) => {
-  if (err) {
-    console.error('Error al insertar datos: ', err);
-    return res.status(404).json({msg:"Error en la consulta"})
-  } else {
-    console.log('Nuevo usuario insertado con éxito.');
-    return res.status(200).json({msg:"Registro Exitoso"})
-  }
-});
-return res.status(200).json({msg:"Registro Exitoso",status: 200})
+    pool.query(sql, nuevoUsuario, (err, result) => {
+      if (err) {
+        console.error('Error al insertar datos: ', err);
+        return res.status(404).json({ msg: "Error en la consulta" })
+      } else {
+        console.log('Nuevo usuario insertado con éxito.');
+        return res.status(200).json({ msg: "Registro Exitoso" })
+      }
+    });
+    return res.status(200).json({ msg: "Registro Exitoso", status: 200 })
 
     /*const [existingUser] = await pool.query('SELECT * FROM base WHERE correo=? and contraseña=? and nombre=?')*/
-  } catch(error){
-    return res.status(404).json({msg:"Error en la consulta"})
-  }
-  /*const [existingUser] = await pool.query('SELECT * FROM base')
-  console.log(existingUser)
-  return res.status(200).json({msg:"bien"})
-  try {
-    const { correo, contraseña } = req.body;
-
-    // Verificar si el usuario ya existe en la base de datos
-    const [existingUser] = await pool.query('SELECT * FROM base WHERE correo = ?', [correo]);
-    if (existingUser.length > 0) {
-      req.flash('error', 'El usuario ya existe. Intenta con otro.');
-      return res.redirect('/');
-    }
-
-    // Hashear la contraseña antes de guardarla
-    const hashedPassword = await bcrypt.hash(contraseña, 10);
-
-    // Insertar el nuevo usuario en la base de datos
-    await pool.query('INSERT INTO base (correo, contraseña) VALUES (?, ?)', [correo, hashedPassword]);
-
-    req.flash('success', 'Registro exitoso. Ahora puedes iniciar sesión.');
-    res.redirect('/');
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Error en el servidor.');
-  }*/
+    return res.status(404).json({ msg: "Error en la consulta" })
+  }
 });
 
 // Ruta para el inicio de sesión
 router.post('/login', async (req, res) => {
-  try { 
-    const { username, password} = req.body;
-    console.log(username, password)
-    const [existingUser] = await pool.query('SELECT * FROM base WHERE correo=? and contraseña=?',[username,password])
+  try {
+    const { username, password, type } = req.body;
+    console.log(username, password, type)
+    const [existingUser] = await pool.query('SELECT * FROM base WHERE correo=? and contraseña=? and tipo=?', [username, password, type])
     console.log(existingUser)
 
-  return res.status(200).json({msg:"LogIn exitoso",status: 200, data: existingUser})
-  } catch(error){
-    return res.status(404).json({msg:"Error en la consulta"})
+    return res.status(200).json({ msg: "LogIn exitoso", status: 200, data: existingUser })
+  } catch (error) {
+    return res.status(404).json({ msg: "Error en la consulta" })
   }
 });
 

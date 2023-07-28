@@ -1,5 +1,7 @@
 let carrito = [];
 
+
+
 function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
     alert(`"${nombre}" se ha agregado al carrito.`);
@@ -83,7 +85,17 @@ function realizarPago() {
     mostrarModalCarrito(); // Actualizar el modal del carrito vacío
     cerrarModalPago(); // Cerrar la modal de pago
     mostrarModalPagoCompletado(); // Mostrar la modal de pago completado
+    //esconder icono free
+    /*
+    let freeIcon = document.getElementById("freeIcon");
+    let premiumIcon = document.getElementById("premiumIcon")
+    console.log(freeIcon, premiumIcon)
+    freeIcon.classList.add("hideIcon")
+    premiumIcon.classList.remove("hideIcon")
+    */
+   localStorage.setItem("pagado",true)
 }
+
     // Función para abrir automáticamente este archivo cuando se cargue la página
     document.addEventListener('DOMContentLoaded', () => {
         abrirOrientacionVocacional();
