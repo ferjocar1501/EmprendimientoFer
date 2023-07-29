@@ -116,161 +116,160 @@ function showOrientacionVocacionalAsistida() {
 
 <!-- Curso 12: Ingeniería Mecatrónica -->
 <div class="curso-box">
-    <i class="fas fa-robot icon-small"></i>
-    <p style="font-weight: bold;">Ingeniería Mecatrónica</p>
-    <img class="image-small" src="robot.png" alt="Ingeniería Mecatrónica">
-    <button class="add-to-collection-btn" onclick="addToCollection('robot.png', 'Ingeniería Mecatrónica')">
-        <i class="fas fa-plus"></i>
-    </button>
-    <button class="open-modal-btn" onclick="openModal('Ingeniería Mecatrónica', 'Descripción de Ingeniería Mecatrónica', 'ruta_del_video.mp4')">
-        <i class="fas fa-book"></i>
-    </button>
+  <i class="fas fa-robot icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Mecatrónica</p>
+  <img class="image-small" src="robot.png" alt="Ingeniería Mecatrónica">
+  <button class="add-to-collection-btn" onclick="addToCollection('robot.png', 'Ingeniería Mecatrónica')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Mecatrónica', 'Descripción de Ingeniería Mecatrónica', 'ruta_del_video.mp4')">
+    <i class="fas fa-book"></i>
+  </button>
 </div>
 
-
 <!-- Curso 1: Ingeniería Eléctrica -->
-  <div class="curso-box">
-          <i class="fas fa-bolt icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Eléctrica</p>
-          <img class="image-small" src="electrica.png" alt="Ingeniería Eléctrica">
-      <button class="add-to-collection-btn" onclick="addToCollection('electrica.png', 'Ingeniería Eléctrica')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Eléctrica', 'Descripción de Ingeniería Eléctrica')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-
+<div class="curso-box">
+  <i class="fas fa-plug icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Eléctrica</p>
+  <img class="image-small" src="electrica.png" alt="Ingeniería Eléctrica">
+  <button class="add-to-collection-btn" onclick="addToCollection('electrica.png', 'Ingeniería Eléctrica')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Eléctrica', 'Descripción de Ingeniería Eléctrica')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
 
 <!-- Curso 2: Ingeniería Telemática -->
-  <div class="curso-box">
-          <i class="fas fa-network-wired icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Telemática</p>
-          <img class="image-small" src="telematica.png" alt="Ingeniería Telemática">
-      <button class="add-to-collection-btn" onclick="addToCollection('telematica.png', 'Ingeniería Telemática')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Telemática', 'Descripción de Ingeniería Telemática')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 3: Ingeniería Mecánica -->
-  <div class="curso-box">
-          <i class="fas fa-cogs icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Mecánica</p>
-          <img class="image-small" src="mecanica.png" alt="Ingeniería Mecánica">
-      <button class="add-to-collection-btn" onclick="addToCollection('mecanica.png', 'Ingeniería Mecánica')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Mecánica', 'Descripción de Ingeniería Mecánica')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 4: Ingeniería Civil -->
-  <div class="curso-box">
-          <i class="fas fa-hard-hat icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Civil</p>
-          <img class="image-small" src="ingciv.png" alt="Ingeniería Civil">
-      <button class="add-to-collection-btn" onclick="addToCollection('ingciv.png', 'Ingeniería Civil')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Civil', 'Descripción de Ingeniería Civil')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 5: Ingeniería Industrial -->
-  <div class="curso-box">
-          <i class="fas fa-industry icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Industrial</p>
-          <img class="image-small" src="industrial.png" alt="Ingeniería Industrial">
-      <button class="add-to-collection-btn" onclick="addToCollection('industrial.png', 'Ingeniería Industrial')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Industrial', 'Descripción de Ingeniería Industrial')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 6: Ingeniería de Sistemas -->
-  <div class="curso-box">
-          <i class="fas fa-laptop-code icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería de Sistemas</p>
-          <img class="image-small" src="sistemas.png" alt="Ingeniería de Sistemas">
-      <button class="add-to-collection-btn" onclick="addToCollection('sistemas.png', 'Ingeniería de Sistemas')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería de Sistemas', 'Descripción de Ingeniería de Sistemas')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 7: Ingeniería Estadística -->
-  <div class="curso-box">
-          <i class="fas fa-chart-bar icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Estadística</p>
-          <img class="image-small" src="estadistica.png" alt="Ingeniería Estadística">
-      <button class="add-to-collection-btn" onclick="addToCollection('estadistica.png', 'Ingeniería Estadística')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Estadística', 'Descripción de Ingeniería Estadística')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 8: Ingeniería de Petróleos -->
-  <div class="curso-box">
-          <i class="fas fa-oil-can icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería de Petróleos</p>
-          <img class="image-small" src="petroleo.png" alt="Ingeniería de Petróleos">
-      <button class="add-to-collection-btn" onclick="addToCollection('petroleo.png', 'Ingeniería de Petróleos')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería de Petróleos', 'Descripción de Ingeniería de Petróleos')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 9: Ingeniería en Materiales -->
-  <div class="curso-box">
-          <i class="fas fa-flask icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería en Materiales</p>
-          <img class="image-small" src="turbina.png" alt="Ingeniería en Materiales">
-      <button class="add-to-collection-btn" onclick="addToCollection('turbina.png', 'Ingeniería en Materiales')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería en Materiales', 'Descripción de Ingeniería en Materiales')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 10: Ingeniería Naval -->
-  <div class="curso-box">
-          <i class="fas fa-ship icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería Naval</p>
-          <img class="image-small" src="naval.png" alt="Ingeniería Naval">
-      <button class="add-to-collection-btn" onclick="addToCollection('naval.png', 'Ingeniería Naval')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería Naval', 'Descripción de Ingeniería Naval')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
-  
-  <!-- Curso 11: Ingeniería en Alimentos -->
-  <div class="curso-box">
-          <i class="fas fa-utensils icon-small"></i>
-          <p style="font-weight: bold;">Ingeniería en Alimentos</p>
-          <img class="image-small" src="ali.png" alt="Ingeniería en Alimentos">
-      <button class="add-to-collection-btn" onclick="addToCollection('ali.png', 'Ingeniería en Alimentos')">
-          <i class="fas fa-plus"></i>
-      </button>
-      <button class="open-modal-btn" onclick="openModal('Ingeniería en Alimentos', 'Descripción de Ingeniería en Alimentos')">
-          <i class="fas fa-book"></i>
-      </button>
-  </div>
+<div class="curso-box">
+  <i class="fas fa-network-wired icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Telemática</p>
+  <img class="image-small" src="telematica.png" alt="Ingeniería Telemática">
+  <button class="add-to-collection-btn" onclick="addToCollection('telematica.png', 'Ingeniería Telemática')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Telemática', 'Descripción de Ingeniería Telemática')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 3: Ingeniería Mecánica -->
+<div class="curso-box">
+  <i class="fas fa-cogs icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Mecánica</p>
+  <img class="image-small" src="mecanica.png" alt="Ingeniería Mecánica">
+  <button class="add-to-collection-btn" onclick="addToCollection('mecanica.png', 'Ingeniería Mecánica')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Mecánica', 'Descripción de Ingeniería Mecánica')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Agregar los demás cursos aquí con sus respectivos iconos -->
+<!-- Curso 4: Ingeniería Civil -->
+<div class="curso-box">
+  <i class="fas fa-hard-hat icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Civil</p>
+  <img class="image-small" src="ingciv.png" alt="Ingeniería Civil">
+  <button class="add-to-collection-btn" onclick="addToCollection('ingciv.png', 'Ingeniería Civil')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Civil', 'Descripción de Ingeniería Civil')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 5: Ingeniería Industrial -->
+<div class="curso-box">
+  <i class="fas fa-industry icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Industrial</p>
+  <img class="image-small" src="industrial.png" alt="Ingeniería Industrial">
+  <button class="add-to-collection-btn" onclick="addToCollection('industrial.png', 'Ingeniería Industrial')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Industrial', 'Descripción de Ingeniería Industrial')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 6: Ingeniería de Sistemas -->
+<div class="curso-box">
+  <i class="fas fa-laptop-code icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería de Sistemas</p>
+  <img class="image-small" src="sistemas.png" alt="Ingeniería de Sistemas">
+  <button class="add-to-collection-btn" onclick="addToCollection('sistemas.png', 'Ingeniería de Sistemas')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería de Sistemas', 'Descripción de Ingeniería de Sistemas')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 7: Ingeniería Estadística -->
+<div class="curso-box">
+  <i class="fas fa-chart-bar icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Estadística</p>
+  <img class="image-small" src="estadistica.png" alt="Ingeniería Estadística">
+  <button class="add-to-collection-btn" onclick="addToCollection('estadistica.png', 'Ingeniería Estadística')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Estadística', 'Descripción de Ingeniería Estadística')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 8: Ingeniería de Petróleos -->
+<div class="curso-box">
+  <i class="fas fa-oil-can icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería de Petróleos</p>
+  <img class="image-small" src="petroleo.png" alt="Ingeniería de Petróleos">
+  <button class="add-to-collection-btn" onclick="addToCollection('petroleo.png', 'Ingeniería de Petróleos')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería de Petróleos', 'Descripción de Ingeniería de Petróleos')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 9: Ingeniería en Materiales -->
+<div class="curso-box">
+  <i class="fas fa-flask icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería en Materiales</p>
+  <img class="image-small" src="turbina.png" alt="Ingeniería en Materiales">
+  <button class="add-to-collection-btn" onclick="addToCollection('turbina.png', 'Ingeniería en Materiales')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería en Materiales', 'Descripción de Ingeniería en Materiales')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 10: Ingeniería Naval -->
+<div class="curso-box">
+  <i class="fas fa-anchor icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería Naval</p>
+  <img class="image-small" src="naval.png" alt="Ingeniería Naval">
+  <button class="add-to-collection-btn" onclick="addToCollection('naval.png', 'Ingeniería Naval')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería Naval', 'Descripción de Ingeniería Naval')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
+
+<!-- Curso 11: Ingeniería en Alimentos -->
+<div class="curso-box">
+  <i class="fas fa-apple-alt icon-small"></i>
+  <p style="font-weight: bold;">Ingeniería en Alimentos</p>
+  <img class="image-small" src="ali.png" alt="Ingeniería en Alimentos">
+  <button class="add-to-collection-btn" onclick="addToCollection('ali.png', 'Ingeniería en Alimentos')">
+    <i class="fas fa-plus"></i>
+  </button>
+  <button class="open-modal-btn" onclick="openModal('Ingeniería en Alimentos', 'Descripción de Ingeniería en Alimentos')">
+    <i class="fas fa-book"></i>
+  </button>
+</div>
     
         `;
 }
@@ -285,6 +284,8 @@ function addToCollection(imageSrc, title) {
     courseAddedMessage.innerText = `El curso "${title}" ha sido agregado a la colección.`;
     courseAddedModal.style.display = "block";
     showColeccion();
+    const tooltipId = "tooltipEye" + (selectedImages.length - 1);
+    hideTooltip(tooltipId);    
 }
 function showColeccion() {
     closeSidebar();
@@ -302,11 +303,14 @@ function showColeccion() {
     // Agregar las imágenes al contenido
     selectedImages.forEach((image, index) => {
         collectionContent += `
-            <div class="image-item">
-                <img class="image-small" src="${image.src}" alt="${image.title}">
-                <p>${image.title}</p>
-                <i class="fas fa-trash" onclick="removeFromCollection(${index})"></i>
-            </div>
+        <div class="image-item">
+        <y class="fas fa-eye icon" onmouseenter="showTooltip('tooltipEye${index}')" onmouseleave="hideTooltip('tooltipEye${index}')"></y>
+        <img class="image-small" src="${image.src}" alt="${image.title}">
+        <p>${image.title}</p>
+        <i class="fas fa-trash" onclick="removeFromCollection(${index})"></i>
+        <div class="tooltip" id="tooltipEye${index}">${image.title}</div>
+    </div>
+    
         `;
     });
 
@@ -315,6 +319,21 @@ function showColeccion() {
 
     // Actualizar el contenido del div con el ID "content"
     document.getElementById("content").innerHTML = collectionContent;
+    if (tooltipVisible) {
+        selectedImages.forEach((image, index) => {
+            content += `
+                <div class="image-item">
+                    <y class="fas fa-eye icon" onmouseenter="showTooltip('tooltipEye${index}')" onmouseleave="hideTooltip('tooltipEye${index}')"></y>
+                    <img class="image-small" src="${image.src}" alt="${image.title}">
+                    <p>${image.title}</p>
+                    <i class="fas fa-trash" onclick="removeFromCollection(${index})"></i>
+                    <div class="tooltip" id="tooltipEye${index}">${image.title}</div>
+                </div>
+            `;
+        });
+    }
+    const tooltipId = "tooltipEye" + (selectedImages.length - 1);
+    hideTooltip(tooltipId);    
 }
 
 
@@ -364,16 +383,25 @@ function showResena() {
     document.getElementById("content").innerHTML = content;
 }
 
-function showMonedero(){
+function showMonedero() {
     closeSidebar()
-    document.getElementById("content").innerHTML =`    
+    document.getElementById("content").innerHTML = `    
     <h1 style="font-family: 'Roboto Slab', sans-serif">
     Monedero 
   </h1>
   <p style="font-family: 'Nunito', sans-serif">
     Aquí podrás consultar tu saldo por visualizaciones</p>
-    `;
+    <div class="monedero">
+    <div class="monedas-icono">
+      <i class="fas fa-coins"></i>
+    </div>
+    <div class="saldo">
+      <p>Saldo: $1000</p>
+    </div>
+  </div>
+  `;
 }
+
 
 function showCurso(curso) {
     // Aquí puedes agregar lógica para almacenar el curso seleccionado en "Colección"
@@ -561,4 +589,119 @@ function closeModal() {
     courseVideo.currentTime = 0;
 
     modal.style.display = "none";
+}
+
+function showEstadisticas() {
+    closeSidebar();
+    document.getElementById("content").innerHTML = `
+    <div class="body-container">
+      <h1 style="font-family: 'Roboto Slab', sans-serif">
+        Estadísticas por visualizaciones (por meses)
+      </h1>
+      <p style="font-family: 'Nunito', sans-serif">
+        Aquí podrás consultar toda tu actividad en cuanto a visualizaciones por contenido y clasificadas por meses.</p>
+      <div class="chart-container" style="margin-top: 20px;">
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="chart-container" style="margin-top: 20px;">
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="chart-container" style="margin-top: 20px;">
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+    `;
+
+    // Datos de ejemplo para los gráficos clasificados por meses
+    const dataPorMeses = {
+        labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
+        datasets: [{
+            label: "Visualizaciones por mes",
+            data: [50, 30, 80, 60, 45, 90, 75],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(153, 102, 255, 0.6)",
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(54, 162, 235, 0.6)"
+            ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+                "rgba(54, 162, 235, 1)"
+            ],
+            borderWidth: 1,
+            tension: 0.3 // Agregar la opción de tension para líneas curveadas
+        }]
+    };
+
+    // Opciones de configuración para los gráficos
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false
+    };
+
+    // Crear el gráfico de barras
+    const barChartCtx = document.getElementById("barChart").getContext("2d");
+    new Chart(barChartCtx, {
+        type: "bar",
+        data: dataPorMeses,
+        options: options
+    });
+
+    // Crear el gráfico de pastel (circular)
+    const pieChartCtx = document.getElementById("pieChart").getContext("2d");
+    new Chart(pieChartCtx, {
+        type: "pie",
+        data: dataPorMeses,
+        options: options
+    });
+
+    // Crear el gráfico de líneas
+    const lineChartCtx = document.getElementById("lineChart").getContext("2d");
+    new Chart(lineChartCtx, {
+        type: "line",
+        data: dataPorMeses,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    grid: {
+                        display: true,
+                    },
+                },
+                y: {
+                    grid: {
+                        display: true,
+                    },
+                },
+            },
+        },
+    });
+}
+
+// Llamar a la función showEstadisticas para mostrar los gráficos
+showEstadisticas();
+
+let selectedImage = [];
+let tooltipVisible = true; // Variable para controlar el estado del tooltip
+
+// Funciones para mostrar y ocultar el tooltip
+function showTooltip(tooltipId) {
+    const tooltip = document.getElementById(tooltipId);
+    tooltip.style.opacity = '1';
+    tooltip.style.visibility = 'visible';
+}
+
+function hideTooltip(tooltipId) {
+    const tooltip = document.getElementById(tooltipId);
+    tooltip.style.opacity = '0';
+    tooltip.style.visibility = 'hidden';
 }

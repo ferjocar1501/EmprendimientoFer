@@ -64,7 +64,7 @@ function cerrarModalPagoCompletado() {
       cargandoContenedor.style.display = 'block'; // Mostrar el contenedor del mensaje de "Cargando"
       setTimeout(() => {
         window.location.href = "body.html"; // Redireccionar a body.html después de 5 segundos (ajusta el tiempo según tus necesidades)
-      }, 5000); // Esperamos 5 segundos antes de redireccionar
+      }, 2000); // Esperamos 5 segundos antes de redireccionar
     }, 100); // Esperamos 3 segundos antes de ocultar la modal
   }
   
@@ -93,7 +93,7 @@ function realizarPago() {
     freeIcon.classList.add("hideIcon")
     premiumIcon.classList.remove("hideIcon")
     */
-   localStorage.setItem("pagado",true)
+   localStorage.setItem("pagado","true")
 }
 
     // Función para abrir automáticamente este archivo cuando se cargue la página

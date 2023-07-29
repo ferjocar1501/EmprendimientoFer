@@ -577,7 +577,7 @@ function closeModal() {
 function cargarIconos(){
     let estadoDePago = localStorage.getItem("pagado")
     console.log(estadoDePago);     
-    if (estadoDePago){
+    if (estadoDePago=="true"){
         let freeIcon = document.getElementById("freeIcon");
         let premiumIcon = document.getElementById("premiumIcon")
         console.log(freeIcon, premiumIcon)
@@ -586,7 +586,7 @@ function cargarIconos(){
     } else {
         let freeIcon = document.getElementById("freeIcon");
         let premiumIcon = document.getElementById("premiumIcon")
-        console.log(freeIcon, premiumIcon)
+        console.log(freeIcon, premiumIcon, "aqui")
         freeIcon.classList.remove("hideIcon")
         premiumIcon.classList.add("hideIcon")
     }

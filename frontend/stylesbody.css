@@ -57,9 +57,16 @@ body {
 
 /* Estilo para la barra de título */
 .title-bar {
-  background-image: linear-gradient(45deg, #c7413a, #7a4b48);
+  background-image: linear-gradient(45deg, #b290e9, #48627a);
   color: #ffffff;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  align-self: center;
+  align-items: center;
 }
 
 .title-bar h1 {
@@ -94,6 +101,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Muestra 3 imágenes por fila */
   gap: 20px;
+  cursor: pointer;
   margin-top: 30px;
   justify-items: center;
 }
@@ -109,6 +117,7 @@ body {
   display: inline-block;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efecto de difuminado con sombra */
 }
+
 
 #imagePreview img {
   max-width: 100%;
@@ -314,7 +323,7 @@ body {
   padding: 0;
   margin: 0;
   margin-left: 108px;
-  margin-bottom: 130px;
+  margin-bottom: 75px;
   transition: color 1s, transform 0.3s;
 }
 /* Estilo para el ícono de Log Out */
@@ -550,5 +559,27 @@ video {
 }
 
 .hideIcon {
-    visibility: "hidden";
+    display: none;
 }
+
+.imageIcon {
+  width: 50px;
+}
+
+.imageIcon:hover {
+  cursor: pointer;
+
+}
+
+.iconos {
+  align-self: center;
+  align-items: flex-end;
+  padding-left: 40px;
+  transition: transform 0.3s;
+}
+
+.iconos:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
