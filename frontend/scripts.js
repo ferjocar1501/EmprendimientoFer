@@ -6,93 +6,84 @@ function showInicio() {
     document.getElementById("content").innerHTML = `<header>
     <div class="logo">
     </div>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Orientación Vocacional</a></li>
-            <li><a href="#">Reseñas</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Quiénes Somos</a></li>
-        </ul>
-    </nav>
-    <div class="login">
-        <a href="#">Iniciar Sesión / Registrarse</a>
-    </div>
+
 </header>
 
 <!-- Sección de Presentación -->
 <section class="presentation">
     <div class="presentation-content">
-        <h1>Descubre tu camino hacia el éxito</h1>
-        <p>En Sitespool, creemos que cada estudiante tiene un potencial único para alcanzar el éxito en su carrera.
+    <h1 style="font-family: 'Roboto Slab', sans-serif">Descubre tu camino hacia el éxito</h1>
+    <p style="font-family: 'Nunito', sans-serif">En Sitespool, creemos que cada estudiante tiene un potencial único para alcanzar el éxito en su carrera.
             Nuestra misión es ayudarte a encontrar la vocación perfecta que te lleve hacia el futuro que sueñas.
-            ¡Bienvenido a una experiencia de orientación vocacional sin sesgos!</p>
+            ¡Bienvenido a una experiencia de orientación vocacional!</p>
     </div>
     <div class="presentation-image">
-        <img src="students.jpg" alt="Estudiantes felices">
+        <img src="students.jpg" alt="Estudiantes felices" style="width: 300px; display: block; margin: 0 auto;">
     </div>
 </section>
 
 <!-- Sección de Quiénes Somos -->
 <section class="about-us">
     <div class="about-us-content">
-        <h2>¿Quiénes Somos?</h2>
-        <p>Sitespool es una plataforma creada por un equipo apasionado de educadores y profesionales que entienden
+    <h2 style="font-family: 'Roboto Slab', sans-serif">¿Quiénes Somos?</h2>
+    <p style="font-family: 'Nunito', sans-serif">Sitespool es una plataforma creada por un equipo apasionado de educadores y profesionales que entienden
             el desafío de elegir la carrera universitaria adecuada. Nuestra misión es proporcionar información
             imparcial, precisa y actualizada sobre diversas carreras y campos laborales para que tomes decisiones
             informadas y exitosas en tu futuro académico y profesional.</p>
     </div>
     <div class="about-us-image">
-        <img src="team.jpg" alt="Equipo Sitespool">
+        <img src="team.jpg" alt="Equipo Sitespool" style="width: 300px; display: block; margin: 0 auto;">
     </div>
 </section>
 
 <!-- Sección de Misión -->
 <section class="mission">
     <div class="mission-content">
-        <h2>Nuestra Misión</h2>
-        <p>Nuestra misión es reducir la tasa de deserción estudiantil al proporcionarte una plataforma integral de
+    <h2 style="font-family: 'Roboto Slab', sans-serif">Nuestra Misión</h2>
+    <p style="font-family: 'Nunito', sans-serif">Nuestra misión es reducir la tasa de deserción estudiantil al proporcionarte una plataforma integral de
             orientación vocacional. Queremos inspirarte y empoderarte para que descubras tus intereses, habilidades y
             pasiones, y puedas tomar decisiones educativas y profesionales con confianza. En Sitespool, creemos que
             cada estudiante tiene el potencial de crear un futuro brillante y significativo.</p>
     </div>
     <div class="mission-image">
-        <img src="mission.jpg" alt="Misión de Sitespool">
+        <img src="mision.webp" alt="Misión de Sitespool" style="width: 300px; display: block; margin: 0 auto;">
     </div>
 </section>
 
 <!-- Sección de Visión -->
 <section class="vision">
     <div class="vision-content">
-        <h2>Nuestra Visión</h2>
-        <p>Nuestra visión es un mundo en el que todos los jóvenes tengan acceso a una educación que los motive y guíe
+    <h2 style="font-family: 'Roboto Slab', sans-serif">Nuestra Visión</h2>
+    <p style="font-family: 'Nunito', sans-serif">Nuestra visión es un mundo en el que todos los jóvenes tengan acceso a una educación que los motive y guíe
             hacia carreras gratificantes y exitosas. Queremos ser el puente entre tus sueños y la realidad, brindándote
             una experiencia enriquecedora y personalizada de exploración vocacional. En Sitespool, aspiramos a ser tu
             compañero de confianza en el camino hacia el éxito académico y profesional.</p>
     </div>
     <div class="vision-image">
-        <img src="vision.jpg" alt="Visión de Sitespool">
+        <img src="vision.jpg" alt="Visión de Sitespool" style="width: 300px; display: block; margin: 0 auto;">
     </div>
 </section>
 
 <!-- Pie de Página -->
 <footer>
-    <div class="contact-info">
-        <h3>Contacto</h3>
-        <p>Correo: info@sitespool.com</p>
-        <p>Teléfono: +1 (123) 456-7890</p>
+    <div class="contact-info" style="text-align: center;">
+        <h3 style="font-family: 'Roboto Slab', sans-serif">Contacto</h3>
+        <p style="font-family: 'Nunito', sans-serif">Correo: info@sitespool.com</p>
+        <p style="font-family: 'Nunito', sans-serif">Teléfono: +1 (123) 456-7890</p>
     </div>
     <div class="footer-links">
         <ul>
             <li><a href="#">Política de Privacidad</a></li>
             <li><a href="#">Términos de Servicio</a></li>
         </ul>
-        <img src="sinfondo.png" alt="Sitespool Logo">
+        <img src="sinfondo.png" alt="Sitespool Logo" style="width: 200px; display: block; margin: 0 auto;">
     </div>
-</footer> 
-    
-    `;
+</footer>
+
+`;
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     showInicio(); // CAMBIAR LUEGO A INICIO
