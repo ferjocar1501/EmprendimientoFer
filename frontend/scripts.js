@@ -95,7 +95,7 @@ function showInicio() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    showOrientacionVocacionalAsistida(); // CAMBIAR LUEGO A INICIO
+    showInicio(); // CAMBIAR LUEGO A INICIO
 });
 
 // Variables para almacenar las imágenes seleccionadas en la colección
@@ -317,22 +317,594 @@ function showColeccion() {
     document.getElementById("content").innerHTML = collectionContent;
 }
 
-function showTestVocacional() {
+// Parte 1: Generar el contenido del formulario y los botones en el elemento con el id "content"
+function generateFormContent() {
     closeSidebar();
     document.getElementById("content").innerHTML = `
-    <h1 style='font-family: Roboto Slab, sans-serif;'>Test Vocacional</h1>
-    <p>Completa el siguiente formulario con tus respuestas:</p>
-        <form>
-        <label for="respuesta1">Pregunta 1:</label>
-            <textarea id="respuesta1" name="respuesta1" rows="4" cols="50" required></textarea>
-            <br>
-            <label for="respuesta2">Pregunta 2:</label>
-            <textarea id="respuesta2" name="respuesta2" rows="4" cols="50" required></textarea>
-            <!-- Agrega más preguntas según sea necesario -->
-            <br>
-            <input type="submit" value="Enviar respuestas">
+        <h1 style='font-family: Roboto Slab, sans-serif;'>Test Vocacional</h1>
+        <p>Completa el siguiente formulario con tus respuestas:</p>
+        <form id="vocational-test-form">
+            <div id="test-container">
+                <!-- Las preguntas y opciones se generarán dinámicamente aquí -->
+            </div>
+            <button id="prev-btn" disabled>Anterior</button>
+            <button id="next-btn">Siguiente</button>
+            <button id="submit-btn" style="display: none;">Enviar respuestas</button>
+        </form>
+        <style>
+
+        #form-container {
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-family: 'Roboto Slab', sans-serif;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+        }
+        label {
+            margin-left: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+    </style>
+
     `;
 }
+
+
+// Parte 2: Lógica del test vocacional
+function showTestVocacional() {
+    generateFormContent();
+
+    const questions = [
+        {
+            question: "Me gusta manipular herramientas o máquinas y ser capaz de aprovechar todas sus posibilidades",
+            careers: [
+                { name: "Ingeniería Mecánica", points: 0 },
+            ],
+        },
+        {
+            question: "Prefiero las actividades que supongan el contacto con cosas, manipular objetos y utilizar máquinas",
+            careers: [
+                { name: "Ingeniería Mecánica", points: 0 },
+            ],
+        },
+        {
+            question: "Tener un taller de reparación y mantenimiento de carros, tractores, etcétera.",
+            careers: [
+                { name: "Ingeniería Mecánica", points: 0 },
+            ],
+        },
+        {
+            question: "Cuando inicio el conocimiento de un tema nuevo, me entusiasma probar y no lo dejo hasta que consigo comprenderlo e interpretarlo",
+            careers: [
+                { name: "Ingeniería Telemática", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te interesa cómo se comunican los distintos medios de comunicación? (TV, radios, internet)",
+            careers: [
+                { name: "Ingeniería Telemática", points: 0 },
+            ],
+        },
+        {
+            question: "Te gustaría diseñar e implementar sistemas de seguridad para el almacenamiento, la transmisión y accesos a redes y sistemas.",
+            careers: [
+                { name: "Ingeniería Telemática", points: 0 },
+            ],
+        },
+        {
+            question: "Diseñar aplicaciones distribuidas orientadas a la administración y el comercio electrónico.",
+            careers: [
+                { name: "Ingeniería Telemática", points: 0 },
+            ],
+        },
+        {
+            question: "¿Cuándo tienes que resolver un problema matemático, perseveras hasta encontrar la solución?",
+            careers: [
+                { name: "Ingeniería Estadística", points: 0 },
+            ],
+        },
+        {
+            question: "¿Tienes interés por saber cuáles son las causas que determinan ciertos fenómenos, aunque saberlo no altere tu vida?",
+            careers: [
+                { name: "Ingeniería Estadística", points: 0 },
+            ],
+        },
+        {
+            question: "Considero que soy una persona práctica; me gusta ocuparme en trabajos útiles en los que pueda ver pronto los resultados.",
+            careers: [
+                { name: "Ingeniería Estadística", points: 0 },
+            ],
+        },
+        {
+            question: "Prefiero un mismo tipo de ritmo de trabajo cada día que estar continuamente cambiando.",
+            careers: [
+                { name: "Ingeniería Estadística", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gusta participar en pruebas de investigación?",
+            careers: [
+                { name: "Ingeniería Estadística", points: 0 },
+            ],
+        },
+        {
+            question: "Aplicar conocimientos de estadística en investigaciones en diversas áreas (social, administrativa, salud, etcétera).",
+            careers: [
+                { name: "Ingeniería Estadística", points: 0 },
+            ],
+        },
+        {
+            question: "¿Entablas una relación casi personal con tu ordenador?",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "¿Crees que tus ideas son importantes y haces todo lo posible para ponerlas en práctica?",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te cohíbes/inhibes –cortas- al entrar a un lugar nuevo con gente desconocida?",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "¿El trabajo individual te resulta más rápido y efectivo que el trabajo grupal?",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "Me divierten los juegos que requieren pensar analítico: ajedrez, resolver preguntas matemáticas, deducir combinaciones, aplicar estrategias.",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "Diseñar programas de computación y explorar nuevas aplicaciones tecnológicas para uso del internet.",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gusta resolver rompecabezas?",
+            careers: [
+                { name: "Ingeniería de Sistemas", points: 0 },
+            ],
+        },
+        {
+            question: "¿Cuándo se descompone un artefacto en tu casa, te dispones prontamente a repararlo?",
+            careers: [
+                { name: "Ingeniería Eléctrica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Planificas detalladamente tus trabajos antes de empezar?",
+            careers: [
+                { name: "Ingeniería Eléctrica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Consideras que las energías renovables son el futuro?",
+            careers: [
+                { name: "Ingeniería Eléctrica", points: 0 },
+            ],
+        },
+        {
+            question: "Contribuir al uso eficiente de la energía eléctrica para el desarrollo industrial...",
+            careers: [
+                { name: "Ingeniería Eléctrica", points: 0 },
+            ],
+        },
+        {
+            question: "Manejar y/o dar mantenimiento a dispositivos/aparatos tecnológicos en aviones, barcos, radares, etcétera.",
+            careers: [
+                { name: "Ingeniería Eléctrica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Has obtenido buenas calificaciones en química?",
+            careers: [
+                { name: "Ingeniería Química", points: 0 },
+            ],
+        },
+        {
+            question: "¿Disfrutas de hacer experimentos con distintas sustancias?",
+            careers: [
+                { name: "Ingeniería Química", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gusta entender las causas que determinan los acontecimientos históricos?",
+            careers: [
+                { name: "Ingeniería Química", points: 0 },
+            ],
+        },
+        {
+            question: "Te gusta leer con la finalidad de buscar la verdad de cualquier asunto.",
+            careers: [
+                { name: "Ingeniería Química", points: 0 },
+            ],
+        },
+        {
+            question: "Investigar y probar nuevos productos farmacéuticos.",
+            careers: [
+                { name: "Ingeniería Química", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría investigar científicamente sobre cultivos agrícolas?",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría crear nuevas técnicas para descubrir las patologías de algunas enfermedades a través del microscopio?",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría trabajar en un laboratorio mientras estudias?",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gusta la naturaleza?",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te radicarías en una zona agrícola-ganadera para desarrollar tus actividades como profesional?",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Aceptarías hacer una práctica pagada en una industria de productos alimenticios en el sector de control de calidad?",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "Soy una persona siempre dispuesta a cooperar con los demás y a participar en actividades sociales.",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "Trabajar controlando la calidad de los alimentos...",
+            careers: [
+                { name: "Ingeniería en Alimentos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Harías un curso para aprender a fabricar los instrumentos y/o piezas de las máquinas o aparatos con que trabajas?",
+            careers: [
+                { name: "Ingeniería Industrial", points: 0 },
+            ],
+        },
+        {
+            question: "¿Sientes que estás capacitado para contribuir a un mejor rendimiento de una empresa?",
+            careers: [
+                { name: "Ingeniería Industrial", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría diseñar y planificar el tráfico de tu ciudad?",
+            careers: [
+                { name: "Ingeniería Industrial", points: 0 },
+            ],
+        },
+        {
+            question: "Diseñar y planificar la producción masiva de artículos como muebles, autos, equipos de oficina, empaques y envases para alimentos y otros.",
+            careers: [
+                { name: "Ingeniería Industrial", points: 0 },
+            ],
+        },
+        {
+            question: "Resolver problemas de cálculo para construir un puente.",
+            careers: [
+                { name: "Ingeniería Civil", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría contribuir al desarrollo de tu país proyectando obras civiles?",
+            careers: [
+                { name: "Ingeniería Civil", points: 0 },
+            ],
+        },
+        {
+            question: "Concebir planos para viviendas, edificios y ciudadelas.",
+            careers: [
+                { name: "Ingeniería Civil", points: 0 },
+            ],
+        },
+        {
+            question: "Elaborar mapas, planos e imágenes para el estudio y análisis de datos geográficos.",
+            careers: [
+                { name: "Ingeniería Civil", points: 0 },
+            ],
+        },
+        {
+            question: "Administrar y ordenar (planificar) adecuadamente la ocupación del espacio físico de ciudades, países, etc., utilizando imágenes de satélite, mapas.",
+            careers: [
+                { name: "Ingeniería Civil", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te incluirías en un proyecto de investigación de los movimientos sísmicos y sus consecuencias?",
+            careers: [
+                { name: "Ingeniería de Petróleos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Formarías parte de un equipo de trabajo orientado a la preservación de la flora y la fauna en extinción?",
+            careers: [
+                { name: "Ingeniería de Petróleos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te interesan más los misterios de la naturaleza que los secretos de la tecnología?",
+            careers: [
+                { name: "Ingeniería de Petróleos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te interesa el estudio, la exploración y la producción de hidrocarburos?",
+            careers: [
+                { name: "Ingeniería de Petróleos", points: 0 },
+            ],
+        },
+        {
+            question: "¿Trabajar con objetos, máquinas te resulta más gratificante que trabajar con personas?",
+            careers: [
+                { name: "Ingeniería Mecatrónica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría estar informado sobre los nuevos descubrimientos que se están realizando sobre el origen del Universo?",
+            careers: [
+                { name: "Ingeniería Mecatrónica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te atrae investigar sobre los misterios del universo, por ejemplo, los agujeros negros?",
+            careers: [
+                { name: "Ingeniería Mecatrónica", points: 0 },
+            ],
+        },
+        {
+            question: "Cuando realizo algún trabajo o tarea, me gusta hacerlo de manera original, de forma diferente a la mayoría de las personas.",
+            careers: [
+                { name: "Ingeniería Mecatrónica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría construir un robot?",
+            careers: [
+                { name: "Ingeniería Mecatrónica", points: 0 },
+            ],
+        },
+        {
+            question: "Diseñar máquinas que puedan simular actividades humanas.",
+            careers: [
+                { name: "Ingeniería Mecatrónica", points: 0 },
+            ],
+        },
+        {
+            question: "¿Cuándo eras chico, te interesaba saber cómo estaban construidos tus juguetes?",
+            careers: [
+                { name: "Ingeniería en Materiales", points: 0 },
+            ],
+        },
+        {
+            question: "¿Cuándo ocurre un accidente, te interesa conocer las causas?",
+            careers: [
+                { name: "Ingeniería en Materiales", points: 0 },
+            ],
+        },
+        {
+            question: "Te interesa participar en el diseño y desarrollo de productos de ingeniería y estructuras, incluyendo refinerías de petróleo, equipamiento deportivo y tecnología médica, tales como la elaboración de extremidades artificiales.",
+            careers: [
+                { name: "Ingeniería en Materiales", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te gustaría trabajar en laboratorios y visitar talleres o empresas con regularidad?",
+            careers: [
+                { name: "Ingeniería en Materiales", points: 0 },
+            ],
+        },
+        {
+            question: "¿Te interesa la fabricación de los productos que tenemos en la cotidianidad?",
+            careers: [
+                { name: "Ingeniería en Materiales", points: 0 },
+            ],
+        },
+    ];
+
+
+    shuffleArray(questions);
+
+    const options = ["poco", "mucho", "bastante"];
+    let currentQuestionIndex = 0;
+    let points = {};
+
+    // Obtener referencias a los elementos del DOM
+    const testContainer = document.getElementById("test-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    function showQuestion() {
+        const currentQuestion = questions[currentQuestionIndex];
+        const questionElement = document.createElement("p");
+        questionElement.textContent = currentQuestion.question;
+        testContainer.innerHTML = "";
+        testContainer.appendChild(questionElement);
+
+        // Crear opciones de respuesta para la pregunta actual
+        const optionContainer = document.createElement("div");
+        optionContainer.classList.add("options");
+
+        for (let i = 0; i < options.length; i++) {
+            const option = options[i];
+            const optionElement = document.createElement("input");
+            optionElement.type = "radio";
+            optionElement.name = "answer";
+            optionElement.value = option;
+            optionElement.id = `option-${i}`;
+            optionContainer.appendChild(optionElement);
+
+            const labelElement = document.createElement("label");
+            labelElement.textContent = option;
+            labelElement.setAttribute("for", `option-${i}`);
+            optionContainer.appendChild(labelElement);
+        }
+
+        testContainer.appendChild(optionContainer);
+    }
+
+    function showResults() {
+        // Deshabilitar botones
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        submitBtn.disabled = true;
+    
+        // Mostrar resultados en orden descendente de puntos
+        const sortedResults = Object.entries(points).sort((a, b) => b[1] - a[1]);
+        const resultContainer = document.createElement("div");
+        resultContainer.style.marginTop = "20px"; // Agregar margen superior para separar los resultados
+    
+        let resultText = "Tu elección de carrera sería:<br>"; // Añadir <br> para separar las carreras
+    
+        for (const [career, score] of sortedResults) {
+            resultText += `${career} - ${score} puntos<br>`; // Añadir <br> para separar las carreras
+        }
+    
+        resultContainer.innerHTML = resultText; // Usar innerHTML en lugar de textContent
+        testContainer.appendChild(resultContainer);
+    }
+    
+
+    // Lógica para mostrar las preguntas y obtener respuestas
+
+    nextBtn.addEventListener("click", () => {
+        const selectedOption = document.querySelector('input[name="answer"]:checked');
+
+        if (selectedOption) {
+            const selectedValue = selectedOption.value;
+            const currentQuestion = questions[currentQuestionIndex];
+
+            if (selectedValue === "poco") {
+                currentQuestion.careers.forEach(career => {
+                    points[career.name] = (points[career.name] || 0);
+                });
+            } else if (selectedValue === "mucho") {
+                currentQuestion.careers.forEach(career => {
+                    points[career.name] = (points[career.name] || 0) + 3;
+                });
+            } else if (selectedValue === "bastante") {
+                currentQuestion.careers.forEach(career => {
+                    points[career.name] = (points[career.name] || 0) + 6;
+                });
+            }
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+                prevBtn.disabled = false;
+            } else {
+                // Se han respondido todas las preguntas
+                showResults();
+            }
+
+            if (currentQuestionIndex >= questions.length - 1) {
+                nextBtn.disabled = true;
+                submitBtn.style.display = "inline"; // Mostrar el botón "Enviar respuestas"
+            }
+        }
+    });
+
+    // Event listener para el botón "Anterior"
+    prevBtn.addEventListener("click", () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            showQuestion();
+            nextBtn.disabled = false;
+        }
+
+        if (currentQuestionIndex === 0) {
+            prevBtn.disabled = true;
+        }
+    });
+
+    // Event listener para el botón "Siguiente"
+    nextBtn.addEventListener("click", () => {
+        if (currentQuestionIndex < questions.length) {
+            currentQuestionIndex++;
+            showQuestion();
+            prevBtn.disabled = false;
+        }
+
+        if (currentQuestionIndex * questionsPerPage >= questions.length) {
+            nextBtn.disabled = true;
+            submitBtn.disabled = false;
+        }
+    });
+
+    // Mostrar las primeras preguntas al cargar la página
+    showQuestion();
+    nextBtn.disabled = false;
+
+
+    submitBtn.addEventListener("click", () => {
+        showResults();
+    });
+    
+}
+
+showTestVocacional();
+
 
 function showResena() {
     closeSidebar();
@@ -574,10 +1146,10 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-function cargarIconos(){
+function cargarIconos() {
     let estadoDePago = localStorage.getItem("pagado")
-    console.log(estadoDePago);     
-    if (estadoDePago=="true"){
+    console.log(estadoDePago);
+    if (estadoDePago == "true") {
         let freeIcon = document.getElementById("freeIcon");
         let premiumIcon = document.getElementById("premiumIcon")
         console.log(freeIcon, premiumIcon)
@@ -592,12 +1164,18 @@ function cargarIconos(){
     }
 }
 
-function comprarSuscripcion(){
-    window.location.href= "index.html"
+function comprarSuscripcion() {
+    window.location.href = "index.html"
 }
 let freeIcon = document.getElementById("freeIcon");
 
 freeIcon.addEventListener("click", comprarSuscripcion)
 
-document.addEventListener("DOMContentLoaded",cargarIconos)
+document.addEventListener("DOMContentLoaded", cargarIconos)
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
